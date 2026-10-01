@@ -126,7 +126,7 @@ const AppContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F8F9FA] text-[#12161A]">
+    <div className="min-h-screen w-full flex flex-col overflow-x-hidden bg-[#F8F9FA] text-[#12161A]">
       {/* Luxury Cinematic Scroll Progress Tracer */}
       <ScrollProgress />
 

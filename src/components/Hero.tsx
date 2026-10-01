@@ -69,7 +69,7 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.9, delay: 0.15, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="space-y-3"
           >
-            <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white uppercase leading-[1.03] text-balance">
+            <h1 className="font-display text-2xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white uppercase leading-[1.03] text-balance">
               MAKING A <br />
               <span className="bg-gradient-to-r from-white via-neutral-100 to-[#DFB257] bg-clip-text text-transparent">
                 DIFFERENCE

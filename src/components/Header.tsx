@@ -237,9 +237,9 @@ export const Header: React.FC = () => {
 
   return (
     <header className="sticky top-0 z-40 bg-[#0D1013]/90 backdrop-blur-md text-white border-b border-white/[0.08] shadow-lg shadow-black/20 select-none transition-colors">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 h-20 flex items-center justify-between">
         {/* Zone 1: Brand Logo Lockup */}
-        <div className="flex items-center shrink-0 pr-4 sm:pr-6">
+        <div className="flex items-center shrink-0 pr-2 sm:pr-6">
           <a
             href="/"
             onClick={(e) => {
@@ -250,7 +250,7 @@ export const Header: React.FC = () => {
             className="group flex flex-col items-center justify-center transition-opacity hover:opacity-90 py-1"
             aria-label="SINDH REAL ESTATE with SAMINA DEVELOPERS Homepage"
           >
-            <SindhRealEstateLogo variant="stacked" height={58} />
+            <SindhRealEstateLogo variant="stacked" height={44} />
           </a>
         </div>
 
@@ -297,12 +297,12 @@ export const Header: React.FC = () => {
         </nav>
 
         {/* Zone 3: Primary Actions & Search */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-1 sm:gap-4">
           {/* Global Search Button */}
           <button
             type="button"
             onClick={openSearch}
-            className="group flex min-h-11 items-center gap-2 px-3 py-2 text-neutral-300 hover:text-white hover:bg-white/[0.06] border border-transparent hover:border-white/10 rounded-xs transition-all duration-200 cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#DFB257]"
+            className="group flex min-h-11 min-w-11 items-center justify-center gap-2 p-2 text-neutral-300 hover:text-white hover:bg-white/[0.06] border border-transparent hover:border-white/10 rounded-xs transition-all duration-200 cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#DFB257]"
             aria-label="Search site (Cmd+K)"
           >
             <Search className="w-4 h-4 text-neutral-400 group-hover:text-[#DFB257]" />
@@ -315,7 +315,7 @@ export const Header: React.FC = () => {
             size="sm"
             showArrow
             onClick={openProjectInquiry}
-            className="hidden sm:inline-flex whitespace-nowrap"
+            className="inline-flex whitespace-nowrap !px-2 !gap-1 !text-[9px] sm:!px-4 sm:!gap-2 sm:!text-[11px]"
           >
             START A PROJECT
           </Button>
