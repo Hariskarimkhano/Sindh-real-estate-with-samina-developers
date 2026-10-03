@@ -149,7 +149,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ slug }) =>
               {/* Services Deployed */}
               <div className="pt-6 border-t border-neutral-200">
                 <div className="text-xs font-bold uppercase tracking-wider text-neutral-900 mb-3">
-                  Sindh Real Estate Specialized Services Provided
+                  Sindhi Real Estate Specialized Services Provided
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {project.services.map((srv, idx) => (

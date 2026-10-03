@@ -5,7 +5,7 @@ export const NEWS_DATA: NewsArticle[] = [
   {
     id: '2026-construction-cost-index',
     slug: '2026-construction-cost-index',
-    title: 'Sindh Real Estate Building Cost Index: 2026 Market Outlook & Commodity Forecast',
+    title: 'Sindhi Real Estate Building Cost Index: 2026 Market Outlook & Commodity Forecast',
     category: 'Reports',
     date: 'March 18, 2026',
     author: {
@@ -13,10 +13,10 @@ export const NEWS_DATA: NewsArticle[] = [
       title: 'Vice President & Cost Index Director'
     },
     heroImage: ASSETS.heroEngineeringVdc,
-    excerpt: 'The Sindh Real Estate Building Cost Index projects a measured 3.4% annual growth rate in 2026, driven by specialized electrical switchgear lead times and rising demand for AI data center infrastructure.',
+    excerpt: 'The Sindhi Real Estate Building Cost Index projects a measured 3.4% annual growth rate in 2026, driven by specialized electrical switchgear lead times and rising demand for AI data center infrastructure.',
     readTime: '6 min read',
     content: [
-      'The Sindh Real Estate Building Cost Index—which measures costs in the non-residential building construction market in the United States—has reached a value of 1442 for the first quarter of 2026. This represents a 0.85% quarterly increase and a 3.42% increase over the same period in 2025.',
+      'The Sindhi Real Estate Building Cost Index—which measures costs in the non-residential building construction market in the United States—has reached a value of 1442 for the first quarter of 2026. This represents a 0.85% quarterly increase and a 3.42% increase over the same period in 2025.',
       'According to Attilio Rivetti, the vice president who oversees the Cost Index: "While general commodity pricing across raw structural steel and standard lumber has stabilized, the construction market continues to experience intense demand pressures centered on electrical gear, high-voltage transformers, and specialized mechanical cooling systems driven by the exponential buildout of artificial intelligence data centers and advanced manufacturing gigafactories."',
       'Our national procurement intelligence reveals that lead times for 15kV to 35kV medium-voltage switchgear continue to range between 68 and 84 weeks. As a result, early trade contractor engagement and strategic equipment reservation through SourceBlue are now standard prerequisites for any complex commercial or mission-critical capital expenditure program.',
       'Labor availability remains a key factor influencing regional market variances. Metro regions with major semiconductor and clean energy incentive projects are experiencing craft labor tightness in electrical, pipefitting, and controls disciplines. Contractors with proven cultures of safety, competitive prevailing wages, and modern industrialized prefabrication workflows are maintaining superior jobsite staffing and schedule reliability.'
@@ -79,7 +79,7 @@ export const NEWS_DATA: NewsArticle[] = [
       title: 'Senior Vice President of Environmental Health & Safety'
     },
     heroImage: ASSETS.heroConstruction,
-    excerpt: 'Why Sindh Real Estate with Samina Developers’ Living Injury-Free Everyday (LIFE) program treats mental health, total worker wellness, and stop-work empowerment as the true foundation of zero-incident jobsites.',
+    excerpt: 'Why Sindhi Real Estate with Samina Developer’s Living Injury-Free Everyday (LIFE) program treats mental health, total worker wellness, and stop-work empowerment as the true foundation of zero-incident jobsites.',
     readTime: '4 min read',
     content: [
       'For decades, construction safety was measured purely through retrospective lag metrics: OSHA recordable incident rates, lost-time days, and workers’ compensation claims. With an EMR of 0.45, we recognize that true safety requires leading indicators and genuine cultural transformation.',

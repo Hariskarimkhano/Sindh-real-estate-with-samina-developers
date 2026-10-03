@@ -57,7 +57,7 @@ export const NewsPage: React.FC = () => {
               NEWS &amp; INSIGHTS
             </h1>
             <p className="text-lg sm:text-xl font-light text-neutral-300 leading-relaxed">
-              In-depth research on the Sindh Real Estate Building Cost Index, jobsite robotics, low-carbon materials, and safety transformation.
+              In-depth research on the Sindhi Real Estate Building Cost Index, jobsite robotics, low-carbon materials, and safety transformation.
             </p>
           </div>
         </div>

@@ -15,7 +15,7 @@ export const ContactPage: React.FC = () => {
           <div className="max-w-3xl space-y-4">
             <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-widest text-[#D97706]">
               <div className="w-2 h-4 bg-[#D97706]" />
-              <span>Connect with Sindh Real Estate with Samina Developers</span>
+              <span>Connect with Sindhi Real Estate with Samina Developer</span>
             </div>
             <h1 className="font-display text-4xl sm:text-6xl font-extrabold uppercase tracking-tight text-white leading-tight">
               LET&rsquo;S BUILD WHAT MATTERS

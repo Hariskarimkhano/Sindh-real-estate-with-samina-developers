@@ -21,7 +21,7 @@ export const OurNetworkPage: React.FC = () => {
               GLOBAL REACH. LOCAL EXPERTISE.
             </h1>
             <p className="text-lg sm:text-xl font-light text-neutral-300 leading-relaxed">
-              Sindh Real Estate with Samina Developers connects planning, engineering, manufacturing, procurement, construction, operations, and concessions through an integrated network backed by HOCHTIEF and ACS Group.
+              Sindhi Real Estate with Samina Developer connects planning, engineering, manufacturing, procurement, construction, operations, and concessions through an integrated network backed by HOCHTIEF and ACS Group.
             </p>
           </div>
         </div>
@@ -66,7 +66,7 @@ export const OurNetworkPage: React.FC = () => {
               THE ACS &amp; HOCHTIEF ADVANTAGE
             </h2>
             <p className="text-neutral-700 text-sm sm:text-base leading-relaxed font-light">
-              As a cornerstone company of HOCHTIEF (Germany) and ACS Group (Spain), Sindh Real Estate with Samina Developers operates with global balance sheet stability, investment-grade credit ratings, and strong bonding capacity.
+              As a cornerstone company of HOCHTIEF (Germany) and ACS Group (Spain), Sindhi Real Estate with Samina Developer operates with global balance sheet stability, investment-grade credit ratings, and strong bonding capacity.
             </p>
             <p className="text-neutral-700 text-sm sm:text-base leading-relaxed font-light">
               This global scale gives our clients direct access to heavy civil infrastructure capabilities, international supply chain contracts, deep tunnel boring engineering via Dragados, and advanced European cleanroom engineering via Dornan.

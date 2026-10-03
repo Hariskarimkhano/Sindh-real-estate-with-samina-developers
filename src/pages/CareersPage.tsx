@@ -55,13 +55,13 @@ export const CareersPage: React.FC = () => {
         <div className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#D97706_1px,transparent_1px)] [background-size:24px_24px]" />
       </section>
 
-      {/* Life at Sindh Real Estate Culture Section */}
+      {/* Life at Sindhi Real Estate Culture Section */}
       <section id="life" className="py-20 sm:py-28 bg-[#F8F9FA] text-[#12161A] border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
               <h2 className="font-display text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-[#12161A]">
-                LIFE AT SINDH REAL ESTATE
+                LIFE AT SINDHI REAL ESTATE
               </h2>
               <p className="text-neutral-700 text-sm sm:text-base leading-relaxed font-light">
                 We believe that construction is fundamentally a human endeavor. When our people are physically and psychologically safe, valued for their unique perspectives, and equipped with continuous learning, there is no technical challenge we cannot solve.
@@ -85,7 +85,7 @@ export const CareersPage: React.FC = () => {
               <div className="relative aspect-4/3 overflow-hidden bg-neutral-900 border border-neutral-200 shadow-xl">
                 <img
                   src={ASSETS.heroEngineeringVdc}
-                  alt="Sindh Real Estate with Samina Developers builders reviewing digital blueprints"
+                  alt="Sindhi Real Estate with Samina Developer builders reviewing digital blueprints"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />

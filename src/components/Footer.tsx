@@ -67,7 +67,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <button onClick={() => navigate('/international')} className="hover:text-white transition-colors text-left">
-                  Sindh Real Estate International
+                  Sindhi Real Estate International
                 </button>
               </li>
             </ul>
@@ -243,7 +243,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar: Legal & Compliance */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-[11px] text-neutral-400 gap-4">
           <div className="flex flex-wrap items-center gap-6">
-            <span>&copy; {new Date().getFullYear()} Sindh Real Estate with Samina Developers. All rights reserved.</span>
+            <span>&copy; {new Date().getFullYear()} Sindhi Real Estate with Samina Developer. All rights reserved.</span>
             <span className="hover:text-neutral-300 cursor-pointer">Privacy Policy</span>
             <span className="hover:text-neutral-300 cursor-pointer">Terms of Use</span>
             <span className="hover:text-neutral-300 cursor-pointer">Accessibility</span>

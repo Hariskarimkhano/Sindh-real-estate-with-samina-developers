@@ -350,7 +350,7 @@ export const SearchOverlay: React.FC = () => {
         {/* Footer Hint */}
         <div className="px-6 py-3 bg-neutral-950 border-t border-white/10 flex items-center justify-between text-xs text-neutral-400">
           <span>Press <kbd className="px-1.5 py-0.5 bg-white/10 text-neutral-300 rounded-xs">ESC</kbd> to exit</span>
-          <span>Sindh Real Estate with Samina Developers Global Search</span>
+          <span>Sindhi Real Estate with Samina Developer Global Search</span>
         </div>
       </div>
     </div>

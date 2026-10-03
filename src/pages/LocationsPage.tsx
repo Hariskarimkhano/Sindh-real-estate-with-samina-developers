@@ -42,10 +42,10 @@ export const LocationsPage: React.FC = () => {
               <span>Office Directory</span>
             </div>
             <h1 className="font-display text-4xl sm:text-6xl font-extrabold uppercase tracking-tight text-white leading-tight">
-              FIND A SINDH REAL ESTATE OFFICE
+              FIND A SINDHI REAL ESTATE OFFICE
             </h1>
             <p className="text-lg sm:text-xl font-light text-neutral-300 leading-relaxed">
-              With regional offices across North America and key global hubs worldwide, Sindh Real Estate with Samina Developers pairs global capacity with direct local accessibility.
+              With regional offices across North America and key global hubs worldwide, Sindhi Real Estate with Samina Developer pairs global capacity with direct local accessibility.
             </p>
           </div>
         </div>

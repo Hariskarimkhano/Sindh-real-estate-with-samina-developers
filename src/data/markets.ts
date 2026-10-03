@@ -7,7 +7,7 @@ export const MARKETS_DATA: Market[] = [
     slug: 'commercial',
     title: 'Commercial & Mixed-Use',
     shortDescription: 'World-renowned corporate headquarters, supertall commercial towers, and mixed-use urban districts engineered for human wellness and institutional longevity.',
-    overview: 'Sindh Real Estate with Samina Developers shapes the skylines of global commerce through partnerships with leading developers, sovereign wealth funds, and Fortune 500 corporations to deliver iconic headquarters, adaptive reuse modernizations, and vibrant multi-block mixed-use destinations.',
+    overview: 'Sindhi Real Estate with Samina Developer shapes the skylines of global commerce through partnerships with leading developers, sovereign wealth funds, and Fortune 500 corporations to deliver iconic headquarters, adaptive reuse modernizations, and vibrant multi-block mixed-use destinations.',
     heroImage: ASSETS.projectModernTower,
     projectCount: 420,
     keyDrivers: [
@@ -23,7 +23,7 @@ export const MARKETS_DATA: Market[] = [
     slug: 'healthcare',
     title: 'Healthcare & Life Sciences',
     shortDescription: 'Cutting-edge academic medical centers, specialized cancer pavilions, and clinical facilities built without disrupting adjacent lifesaving patient care.',
-    overview: 'As a leading healthcare builder, Sindh Real Estate with Samina Developers understands that constructing a hospital is fundamentally about saving lives. We master the strict infection control risk assessments (ICRA), uninterrupted utility cutovers, and radiation-shielded linear accelerator vaults required by top health systems.',
+    overview: 'As a leading healthcare builder, Sindhi Real Estate with Samina Developer understands that constructing a hospital is fundamentally about saving lives. We master the strict infection control risk assessments (ICRA), uninterrupted utility cutovers, and radiation-shielded linear accelerator vaults required by top health systems.',
     heroImage: ASSETS.projectSustainableCampus,
     projectCount: 380,
     keyDrivers: [
@@ -87,7 +87,7 @@ export const MARKETS_DATA: Market[] = [
     slug: 'data-centers',
     title: 'Data Centers & Mission Critical',
     shortDescription: 'Hyperscale AI infrastructure, Tier III/IV data center campuses, and resilient mission-critical facilities delivered with speed-to-market certainty.',
-    overview: 'As artificial intelligence and cloud computing accelerate exponentially, Sindh Real Estate with Samina Developers provides specialized engineering expertise to construct massive multi-hundred-megawatt campuses. We lead in liquid-cooling retrofits, substation tie-ins, and fast-track modular power deployment.',
+    overview: 'As artificial intelligence and cloud computing accelerate exponentially, Sindhi Real Estate with Samina Developer provides specialized engineering expertise to construct massive multi-hundred-megawatt campuses. We lead in liquid-cooling retrofits, substation tie-ins, and fast-track modular power deployment.',
     heroImage: ASSETS.heroEngineeringVdc,
     projectCount: 220,
     keyDrivers: [
@@ -119,7 +119,7 @@ export const MARKETS_DATA: Market[] = [
     slug: 'green-building',
     title: 'Green Building & Sustainability',
     shortDescription: 'Net Zero carbon buildings, mass timber structures, living building challenge benchmarks, and deep energy retrofits.',
-    overview: 'With over $50B in certified sustainable construction delivered to date, Sindh Real Estate with Samina Developers is an industry leader in decarbonizing the built environment. We pioneer low-carbon concrete mixes, mass timber structural systems, and circular building material reclamation.',
+    overview: 'With over $50B in certified sustainable construction delivered to date, Sindhi Real Estate with Samina Developer is an industry leader in decarbonizing the built environment. We pioneer low-carbon concrete mixes, mass timber structural systems, and circular building material reclamation.',
     heroImage: ASSETS.projectSustainableCampus,
     projectCount: 680,
     keyDrivers: [

@@ -16,7 +16,7 @@ export const InternationalPage: React.FC = () => {
           <div className="max-w-3xl space-y-4">
             <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-widest text-[#D97706]">
               <Globe className="w-4 h-4" />
-              <span>Sindh Real Estate International</span>
+              <span>Sindhi Real Estate International</span>
             </div>
             <h1 className="font-display text-4xl sm:text-6xl font-extrabold uppercase tracking-tight text-white leading-tight">
               GLOBAL EXPERTISE. LOCAL EXPERIENCE.
@@ -37,7 +37,7 @@ export const InternationalPage: React.FC = () => {
               SHAPING THE WORLD&rsquo;S MOST MONUMENTAL HORIZONS
             </h2>
             <p className="text-neutral-700 text-sm sm:text-base leading-relaxed font-light">
-              Sindh Real Estate with Samina Developers brings international construction and project management expertise to sovereign funds, global developers, and multinational corporations.
+              Sindhi Real Estate with Samina Developer brings international construction and project management expertise to sovereign funds, global developers, and multinational corporations.
             </p>
             <p className="text-neutral-700 text-sm sm:text-base leading-relaxed font-light">
               We specialize in tall building engineering, high-wind and seismic aerodynamics, complex curtain-wall procurement, and mission-critical logistical planning across challenging climates.

@@ -83,7 +83,7 @@ export const COMMITMENTS_DATA: CommitmentTab[] = [
     title: 'Environmental Sustainability',
     subtitle: 'Decarbonization, Circularity & Climate Resilience',
     headline: 'Leading the Decarbonization of the Built Environment',
-    description: 'Buildings account for nearly 40% of global carbon emissions. Sindh Real Estate with Samina Developers is committed to reversing this trend through aggressive jobsite electrification, low-embodied-carbon concrete formulation, mass timber construction, and closed-loop material recycling.',
+    description: 'Buildings account for nearly 40% of global carbon emissions. Sindhi Real Estate with Samina Developer is committed to reversing this trend through aggressive jobsite electrification, low-embodied-carbon concrete formulation, mass timber construction, and closed-loop material recycling.',
     targets: [
       { metric: '84%', label: 'Jobsite Waste Diversion', timeframe: 'From Landfills' },
       { metric: '50%', label: 'Embodied Carbon Reduction', timeframe: 'By 2030' },
@@ -133,7 +133,7 @@ export const COMMITMENTS_DATA: CommitmentTab[] = [
     title: 'Safety & Wellness',
     subtitle: 'Zero Incidents, Psychological Safety & Total Health',
     headline: 'Building a Culture Where Every Worker Returns Home Safely',
-    description: 'At Sindh Real Estate with Samina Developers, safety is not merely a regulation or an OSHA metric—it is a core moral imperative. Our Living Injury-Free Everyday (LIFE) philosophy unites every craft worker, subcontractor, and engineer around proactive hazard identification, mental health support, and mutual accountability.',
+    description: 'At Sindhi Real Estate with Samina Developer, safety is not merely a regulation or an OSHA metric—it is a core moral imperative. Our Living Injury-Free Everyday (LIFE) philosophy unites every craft worker, subcontractor, and engineer around proactive hazard identification, mental health support, and mutual accountability.',
     targets: [
       { metric: '0.45', label: 'Experience Mod Rate (EMR)', timeframe: 'Industry Leading' },
       { metric: 'Zero', label: 'Target Incidents', timeframe: 'Every Single Day' },

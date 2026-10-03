@@ -164,7 +164,7 @@ export const LOCATIONS_DATA: OfficeLocation[] = [
   },
   {
     id: 'dubai',
-    name: 'Sindh Real Estate with Samina Developers - Middle East',
+    name: 'Sindhi Real Estate with Samina Developer - Middle East',
     region: 'International',
     city: 'Dubai',
     state: 'Dubai',

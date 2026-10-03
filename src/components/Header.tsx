@@ -40,7 +40,7 @@ export const Header: React.FC = () => {
       featured: {
         title: 'Building What Matters Since 1902',
         tag: 'Heritage & Vision',
-        description: 'Founded on integrity and engineering excellence, Sindh Real Estate with Samina Developers delivers complex projects with local passion and global perspective.',
+        description: 'Founded on integrity and engineering excellence, Sindhi Real Estate with Samina Developer delivers complex projects with local passion and global perspective.',
         href: '/who-we-are',
         image: ASSETS.heroConstruction
       }
@@ -118,8 +118,8 @@ export const Header: React.FC = () => {
           title: 'Specialized Capabilities',
           items: [
             { label: 'SourceBlue', href: '/our-network#sourceblue', description: 'Direct manufacturer equipment procurement' },
-            { label: 'Sindh Real Estate Engineering Group', href: '/our-network#teg', description: 'Structural peer review & geotechnical SWAT' },
-            { label: 'Sindh Real Estate Technical Services', href: '/our-network#tts', description: 'Level 1-5 integrated commissioning' },
+            { label: 'Sindhi Real Estate Engineering Group', href: '/our-network#teg', description: 'Structural peer review & geotechnical SWAT' },
+            { label: 'Sindhi Real Estate Technical Services', href: '/our-network#tts', description: 'Level 1-5 integrated commissioning' },
             { label: 'Clark Builders', href: '/our-network#clark', description: 'Western & Northern Canadian operations' }
           ]
         },
@@ -129,7 +129,7 @@ export const Header: React.FC = () => {
             { label: 'HOCHTIEF', href: '/our-network#hochtief', description: 'International infrastructure & concessions' },
             { label: 'ACS Group', href: '/our-network#acs', description: 'Global civil engineering & industrial leader' },
             { label: 'Dragados', href: '/our-network#dragados', description: 'Heavy civil tunnels, bridges & marine ports' },
-            { label: 'Sindh Real Estate International', href: '/international', description: 'Middle East, Asia Pacific & European projects' }
+            { label: 'Sindhi Real Estate International', href: '/international', description: 'Middle East, Asia Pacific & European projects' }
           ]
         }
       ],
@@ -188,7 +188,7 @@ export const Header: React.FC = () => {
         {
           title: 'Our Workplace',
           items: [
-            { label: 'Life at Sindh Real Estate', href: '/careers#life', description: 'Belonging, wellness & career acceleration' },
+            { label: 'Life at Sindhi Real Estate', href: '/careers#life', description: 'Belonging, wellness & career acceleration' },
             { label: 'Total Rewards & Benefits', href: '/careers#benefits', description: 'Healthcare, 401(k), equity & family leave' },
             { label: 'Professional Development', href: '/careers#learning', description: 'Continuous professional education programs' }
           ]
@@ -196,7 +196,7 @@ export const Header: React.FC = () => {
       ],
       featured: {
         title: 'Ambitious People. Impactful Work.',
-        tag: 'Careers at Sindh Real Estate with Samina Developers',
+        tag: 'Careers at Sindhi Real Estate with Samina Developer',
         description: 'Solve challenging engineering problems alongside colleagues who share your passion for building what matters.',
         href: '/careers',
         image: ASSETS.heroConstruction
@@ -248,7 +248,7 @@ export const Header: React.FC = () => {
               navigate('/');
             }}
             className="group flex flex-col items-center justify-center transition-opacity hover:opacity-90 py-1"
-            aria-label="SINDH REAL ESTATE with SAMINA DEVELOPERS Homepage"
+            aria-label="Sindhi Real Estate with Samina Developer Homepage"
           >
             <SindhRealEstateLogo variant="stacked" height={44} />
           </a>

@@ -93,7 +93,7 @@ export const MarketDetailPage: React.FC<MarketDetailPageProps> = ({ slug }) => {
               <div className="p-6 bg-white border border-neutral-200 space-y-3">
                 <div className="text-xs font-bold uppercase tracking-wider text-neutral-900 flex items-center gap-2">
                   <Shield className="w-4 h-4 text-[#D97706]" />
-                  <span>Why Sindh Real Estate Leads This Market</span>
+                  <span>Why Sindhi Real Estate Leads This Market</span>
                 </div>
                 <p className="text-xs text-neutral-600 leading-relaxed">
                   Our sector leaders maintain active seats on international regulatory code committees, hospital infection control task forces, and high-performance building councils—allowing us to anticipate permitting hurdles, market supply constraints, and technical evolutions before they impact your jobsite.

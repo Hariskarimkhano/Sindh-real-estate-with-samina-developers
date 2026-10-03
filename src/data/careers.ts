@@ -13,7 +13,7 @@ export const CAREERS_DATA: Job[] = [
     responsibilities: [
       'Lead comprehensive project delivery including budget governance, schedule sequencing, and owner client representation.',
       'Coordinate multidisciplinary architectural, engineering, and specialty trade subcontractor teams.',
-      'Ensure strict adherence to Sindh Real Estate with Samina Developers’ Living Injury-Free Everyday (LIFE) safety standards and ICRA healthcare containment protocols.',
+      'Ensure strict adherence to Sindhi Real Estate with Samina Developer’s Living Injury-Free Everyday (LIFE) safety standards and ICRA healthcare containment protocols.',
       'Manage financial forecasting, monthly pay applications, change management, and risk mitigation strategies.',
       'Mentor and develop assistant project managers, project engineers, and field superintendents.'
     ],
@@ -72,7 +72,7 @@ export const CAREERS_DATA: Job[] = [
     description: 'We are seeking a seasoned Senior Superintendent to orchestrate site operations for high-profile Manhattan high-rise towers. You will direct field logistics, trade contractor daily execution, crane operations, and maintain our unwavering commitment to jobsite safety.',
     responsibilities: [
       'Direct all day-to-day jobsite construction activities across all craft trades, hoisting, and delivery logistics.',
-      'Champion Sindh Real Estate with Samina Developers’ LIFE safety culture, conducting daily job safety analyses (JSA) and trade foremen huddles.',
+      'Champion Sindhi Real Estate with Samina Developer’s LIFE safety culture, conducting daily job safety analyses (JSA) and trade foremen huddles.',
       'Execute Last Planner System® pull planning and maintain two-week lookahead schedule milestones.',
       'Manage urban logistics including crane jumps, hoist operation, concrete pumping, and street closures with municipal authorities.',
       'Enforce strict quality assurance/quality control (QA/QC) checklists and signoffs.'
@@ -183,7 +183,7 @@ export const LIFE_AT_SINDH_REAL_ESTATE = {
   pillars: [
     {
       title: 'Our People & Culture',
-      description: 'At Sindh Real Estate with Samina Developers, you are surrounded by passionate builders who take pride in crafting the world’s most iconic structures. We foster an environment of radical collaboration, mentorship, and mutual respect.'
+      description: 'At Sindhi Real Estate with Samina Developer, you are surrounded by passionate builders who take pride in crafting the world’s most iconic structures. We foster an environment of radical collaboration, mentorship, and mutual respect.'
     },
     {
       title: 'Continuous Learning & Growth',

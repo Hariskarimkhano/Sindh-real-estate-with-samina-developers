@@ -245,7 +245,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ slug }) =>
       <section className="py-20 bg-[#12161A] text-white text-center">
         <div className="max-w-3xl mx-auto px-6 space-y-6">
           <h2 className="font-display text-3xl font-extrabold uppercase tracking-tight text-white">
-            READY TO ENGAGE SINDH REAL ESTATE {service.title.toUpperCase()}?
+            READY TO ENGAGE SINDHI REAL ESTATE {service.title.toUpperCase()}?
           </h2>
           <p className="text-sm text-neutral-400">
             Connect with our discipline leaders to establish early cost modeling, constructability analysis, and schedule assurance.

@@ -99,7 +99,7 @@ export const SubcontractorsPage: React.FC = () => {
               PREQUALIFICATION STANDARDS &amp; REQUIREMENTS
             </h2>
             <p className="text-neutral-600 text-sm sm:text-base leading-relaxed">
-              Before submitting bids on Sindh Real Estate with Samina Developers projects, trade contractors undergo rigorous financial, safety, and operational prequalification.
+              Before submitting bids on Sindhi Real Estate with Samina Developer projects, trade contractors undergo rigorous financial, safety, and operational prequalification.
             </p>
           </div>
 
@@ -112,7 +112,7 @@ export const SubcontractorsPage: React.FC = () => {
                 1. Safety Record &amp; EMR
               </h3>
               <p className="text-xs text-neutral-600 leading-relaxed">
-                Experience Modification Rate (EMR) preferably below 1.0, comprehensive OSHA logs (Forms 300 &amp; 300A for previous 3 years), and commitment to Sindh Real Estate with Samina Developers’ Living Injury-Free Everyday (LIFE) protocol.
+                Experience Modification Rate (EMR) preferably below 1.0, comprehensive OSHA logs (Forms 300 &amp; 300A for previous 3 years), and commitment to Sindhi Real Estate with Samina Developer’s Living Injury-Free Everyday (LIFE) protocol.
               </p>
             </div>
 
@@ -136,7 +136,7 @@ export const SubcontractorsPage: React.FC = () => {
                 3. Diverse Business Enterprise (UBE)
               </h3>
               <p className="text-xs text-neutral-600 leading-relaxed">
-                We strongly encourage Minority, Women, Veteran, and LGBTQ+ owned enterprises to register. Sindh Real Estate with Samina Developers awards over $3.5B annually to certified diverse trade businesses.
+                We strongly encourage Minority, Women, Veteran, and LGBTQ+ owned enterprises to register. Sindhi Real Estate with Samina Developer awards over $3.5B annually to certified diverse trade businesses.
               </p>
             </div>
           </div>
@@ -154,7 +154,7 @@ export const SubcontractorsPage: React.FC = () => {
               START PREQUALIFICATION
             </h2>
             <p className="text-neutral-400 text-sm max-w-xl mx-auto leading-relaxed">
-              Submit your company credentials to begin the formal prequalification and bidding qualification process with Sindh Real Estate with Samina Developers.
+              Submit your company credentials to begin the formal prequalification and bidding qualification process with Sindhi Real Estate with Samina Developer.
             </p>
           </div>
 

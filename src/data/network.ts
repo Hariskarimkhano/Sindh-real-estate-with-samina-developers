@@ -14,7 +14,7 @@ export const NETWORK_COMPANIES: NetworkCompany[] = [
     ]
   },
   {
-    name: 'Sindh Real Estate Engineering Group (TEG)',
+    name: 'Sindhi Real Estate Engineering Group (TEG)',
     role: 'Structural & Technical Engineering Services',
     relationship: 'Internal Technical Practice',
     description: 'Providing peer review, deep geotechnical analysis, forensic structural evaluations, and facade engineering. TEG serves as our internal technical SWAT team solving complex engineering challenges on marquee projects.',
@@ -26,7 +26,7 @@ export const NETWORK_COMPANIES: NetworkCompany[] = [
     ]
   },
   {
-    name: 'Sindh Real Estate Technical Services',
+    name: 'Sindhi Real Estate Technical Services',
     role: 'Commissioning & Facilities Operational Readiness',
     relationship: 'Internal Specialist Division',
     description: 'Ensuring high-performance facilities transition smoothly from construction to live mission-critical operation. Managing Level 1-5 integrated systems commissioning and building automation validation.',

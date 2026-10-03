@@ -100,7 +100,7 @@ export const ProjectInquiryWorkflow: React.FC = () => {
                 START A PROJECT INQUIRY
               </h2>
               <p className="text-xs text-neutral-400">
-                Partner with Sindh Real Estate &amp; Samina Developers for your capital program
+                Partner with Sindhi Real Estate with Samina Developer for your capital program
               </p>
             </div>
           </div>
@@ -250,7 +250,7 @@ export const ProjectInquiryWorkflow: React.FC = () => {
               {step === 3 && (
                 <div className="space-y-4 animate-in fade-in duration-200">
                   <h3 className="text-base font-bold text-white">3. Select primary market sector</h3>
-                  <p className="text-xs text-neutral-400">Sindh Real Estate with Samina Developers aligns specialized sector teams with specific technical requirements.</p>
+                  <p className="text-xs text-neutral-400">Sindhi Real Estate with Samina Developer aligns specialized sector teams with specific technical requirements.</p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
                     {marketsList.map(mkt => {
                       const selected = formData.market === mkt;

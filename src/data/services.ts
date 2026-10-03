@@ -8,7 +8,7 @@ export const SERVICES_DATA: Service[] = [
     number: '01',
     title: 'Preconstruction',
     shortDescription: 'Rigorous front-end estimating, scheduling, constructability reviews, and target value engineering that eliminate risk before site mobilization.',
-    overview: 'Preconstruction at Sindh Real Estate with Samina Developers is not merely an estimate—it is a collaborative engineering process. By uniting architects, engineers, trade partners, and client stakeholders in the conceptual stage, we establish realistic cost models, identify supply chain vulnerabilities, model logistics in 4D, and guarantee budget certainty before ground is broken.',
+    overview: 'Preconstruction at Sindhi Real Estate with Samina Developer is not merely an estimate—it is a collaborative engineering process. By uniting architects, engineers, trade partners, and client stakeholders in the conceptual stage, we establish realistic cost models, identify supply chain vulnerabilities, model logistics in 4D, and guarantee budget certainty before ground is broken.',
     heroImage: ASSETS.heroEngineeringVdc,
     capabilities: [
       'Conceptual & Target Value Estimating',
