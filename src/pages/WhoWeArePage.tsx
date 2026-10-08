@@ -2,19 +2,24 @@ import React from 'react';
 import { useNavigation } from '../context/NavigationContext';
 import { CompanyStatistics } from '../components/CompanyStatistics';
 import { Button } from '../components/ui/Button';
-import { ArrowRight, CheckCircle2, Shield, Users, HeartHandshake, Award } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Shield, Users, HeartHandshake, Award, MapPin, UserRound } from 'lucide-react';
 import { ASSETS } from '../data/assets';
+import abuAliPhoto from '../assets/Team leadership/abu ali.jpeg';
+import fatimaPhoto from '../assets/Team leadership/fatima.jpeg';
+import jimmySinghPhoto from '../assets/Team leadership/jimmy singh.jpeg';
+import michealFarrisPhoto from '../assets/Team leadership/michael farris.jpeg';
+import shahnawazPhoto from '../assets/Team leadership/shahnawaz.jpeg';
 
 export const WhoWeArePage: React.FC = () => {
   const { navigate, openProjectInquiry } = useNavigation();
 
   const leadershipTeam = [
-    { name: 'Peter Davoren', title: 'Chairman & Chief Executive Officer', tenure: '46 years in construction' },
-    { name: 'Christa Andresky', title: 'Executive Vice President & Chief Financial Officer', tenure: 'Executive Leadership' },
-    { name: 'Michael Kuntz', title: 'Executive Vice President, Global Operations', tenure: '38 years in construction' },
-    { name: 'Tom Reilly', title: 'Executive Vice President, Technology & Innovation', tenure: '34 years in construction' },
-    { name: 'Rosemarie Mitchell', title: 'Senior Vice President & Chief Human Resources Officer', tenure: '22 years in construction' },
-    { name: 'Attilio Rivetti', title: 'Vice President & Cost Index Director', tenure: '28 years in construction' }
+    { name: 'Shahnawaz Sehto', title: 'Founder & Chairman', details: 'Pakistan — Sindh', image: shahnawazPhoto, preserveImage: true },
+    { name: 'Ms. Samina Shahnawaz', title: 'Chief Executive Officer (CEO)', details: 'Pakistan — Sindh', image: null, isCeo: true },
+    { name: 'Mr. Micheal Farris', title: 'Director – International Affairs', details: 'UK National', image: michealFarrisPhoto },
+    { name: 'Mr. Jimmy Singh', title: 'Financial Director', details: 'Indian-Canadian National', image: jimmySinghPhoto, preserveImage: true },
+    { name: 'Ms. Fatima Bint Sheikh Rashid', title: 'Operations Director', details: 'UAE National', image: fatimaPhoto, preserveImage: true },
+    { name: 'Mr. Abu Ali', title: 'Director – Strategic Partnerships', details: 'Bahraini National', image: abuAliPhoto }
   ];
 
   const historicalMilestones = [
@@ -100,42 +105,85 @@ export const WhoWeArePage: React.FC = () => {
       </section>
 
       {/* Leadership Team */}
-      <section id="leadership" className="py-20 sm:py-28 bg-white border-b border-neutral-200">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="max-w-3xl space-y-4 mb-14">
-            <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-widest text-[#D97706]">
-              <div className="w-2 h-4 bg-[#D97706]" />
-              <span>Governance &amp; Direction</span>
+      <section id="leadership" className="relative isolate overflow-hidden border-b border-white/10 bg-[#12161A] py-20 text-white sm:py-28">
+        <div className="pointer-events-none absolute inset-0 -z-10 opacity-20 bg-[radial-gradient(#D97706_1px,transparent_1px)] [background-size:24px_24px]" />
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-12 flex flex-col justify-between gap-8 lg:mb-16 lg:flex-row lg:items-end">
+            <div className="max-w-3xl space-y-4">
+              <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-widest text-[#D97706]">
+                <div className="h-4 w-2 bg-[#D97706]" />
+                <span>Governance &amp; Direction</span>
+              </div>
+              <h2 className="font-display text-3xl font-extrabold uppercase leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+                Our Leadership
+              </h2>
+              <p className="max-w-2xl text-sm leading-relaxed text-neutral-300 sm:text-base">
+                Meet the leadership team guiding Sindhi Real Estate with Samina Developer.
+              </p>
             </div>
-            <h2 className="font-display text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-[#12161A]">
-              EXECUTIVE LEADERSHIP
-            </h2>
-            <p className="text-neutral-600 leading-relaxed text-sm sm:text-base">
-              Seasoned builders, engineers, and executives with decades of field-proven commitment to clients, safety, and our workforce.
-            </p>
+
+            <div className="flex shrink-0 items-center gap-4 border border-white/15 bg-white/[0.04] px-5 py-4 sm:px-6">
+              <div className="flex h-11 w-11 items-center justify-center border border-[#D97706]/50 bg-[#D97706]/10 text-[#D97706]">
+                <span className="font-mono-numbers text-lg font-bold">13</span>
+              </div>
+              <div>
+                <span className="block text-[10px] font-bold uppercase tracking-[0.18em] text-neutral-400">Company Established</span>
+                <span className="mt-1 block font-display text-lg font-bold text-white">1 July 2013</span>
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
             {leadershipTeam.map((leader, idx) => (
-              <div
-                key={idx}
-                className="bg-[#F8F9FA] border border-neutral-200 p-6 flex flex-col justify-between space-y-4 hover:border-neutral-400 transition-colors"
+              <article
+                key={leader.name}
+                className="group overflow-hidden border border-white/10 bg-[#1E242B] transition-all duration-300 hover:-translate-y-1 hover:border-[#D97706]/70 hover:shadow-2xl hover:shadow-black/25"
               >
-                <div>
-                  <span className="text-[11px] font-mono-numbers text-[#D97706] font-semibold uppercase tracking-wider block mb-1">
-                    {leader.tenure}
-                  </span>
-                  <h3 className="font-display text-lg font-bold text-[#12161A]">
+                <div className="relative aspect-[4/3] overflow-hidden bg-[#252D35]">
+                  {leader.image ? (
+                    <img
+                      src={leader.image}
+                      alt={leader.name}
+                      className={`h-full w-full ${
+                        leader.preserveImage
+                          ? 'object-contain object-center'
+                          : 'object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105'
+                      }`}
+                    />
+                  ) : (
+                    <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#35404B] via-[#252D35] to-[#1E242B]">
+                      <div className="flex h-16 w-16 items-center justify-center rounded-full border border-[#D97706]/45 bg-[#D97706]/10 text-[#D97706]">
+                        <UserRound className="h-8 w-8" strokeWidth={1.5} />
+                      </div>
+                      {leader.isCeo ? (
+                        <div className="text-center">
+                          <span className="block text-xs font-bold uppercase tracking-[0.22em] text-white">CEO</span>
+                          <span className="mt-1 block text-[11px] font-semibold uppercase tracking-widest text-[#D97706]">Photo Coming Soon</span>
+                        </div>
+                      ) : (
+                        <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-neutral-400">Profile portrait</span>
+                      )}
+                    </div>
+                  )}
+                  <div className="absolute left-4 top-4 flex h-8 min-w-8 items-center justify-center border border-white/20 bg-[#12161A]/75 px-2 font-mono-numbers text-[11px] font-bold text-[#D97706] backdrop-blur-sm">
+                    {String(idx + 1).padStart(2, '0')}
+                  </div>
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#12161A]/45 to-transparent" />
+                </div>
+
+                <div className="p-5 sm:p-6">
+                  <h3 className="font-display text-xl font-bold leading-snug text-white sm:text-2xl">
                     {leader.name}
                   </h3>
-                  <p className="text-xs text-neutral-600 mt-1">
+                  <p className="mt-2 min-h-10 text-sm font-medium leading-relaxed text-[#D97706]">
                     {leader.title}
                   </p>
+                  <div className="mt-5 flex items-start gap-2.5 border-t border-white/10 pt-4 text-xs leading-relaxed text-neutral-300">
+                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-neutral-500" />
+                    <span>{leader.details}</span>
+                  </div>
                 </div>
-                <div className="pt-4 border-t border-neutral-200 text-[11px] text-neutral-500 font-semibold uppercase tracking-wider">
-                  Sindhi Real Estate Executive Committee
-                </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>

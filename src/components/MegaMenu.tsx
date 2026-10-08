@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigation } from '../context/NavigationContext';
+import { isNavigationTargetActive, useNavigation } from '../context/NavigationContext';
 import { ArrowRight } from 'lucide-react';
 
 export interface MegaMenuCategory {
@@ -8,7 +8,7 @@ export interface MegaMenuCategory {
   href: string;
   columns: {
     title: string;
-    items: { label: string; href: string; description?: string }[];
+    items: { label: string; href: string; description?: string; matchDescendants?: boolean }[];
   }[];
   featured: {
     title: string;
@@ -26,7 +26,7 @@ interface MegaMenuProps {
 }
 
 export const MegaMenu: React.FC<MegaMenuProps> = ({ category, isOpen, onClose }) => {
-  const { navigate } = useNavigation();
+  const { currentPath, currentHash, searchParams, navigate } = useNavigation();
 
   if (!isOpen) return null;
 
@@ -47,26 +47,38 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({ category, isOpen, onClose })
                   {col.title}
                 </h4>
                 <ul className="space-y-3">
-                  {col.items.map((item, itemIdx) => (
-                    <li key={itemIdx}>
-                      <button
-                        onClick={() => {
-                          onClose();
-                          navigate(item.href);
-                        }}
-                        className="text-left text-sm text-neutral-300 hover:text-white transition-colors group flex items-baseline gap-1"
-                      >
-                        <span className="group-hover:translate-x-1 transition-transform inline-block">
-                          {item.label}
-                        </span>
-                      </button>
-                      {item.description && (
-                        <p className="text-xs text-neutral-500 mt-0.5 line-clamp-1">
-                          {item.description}
-                        </p>
-                      )}
-                    </li>
-                  ))}
+                  {col.items.map((item, itemIdx) => {
+                    const isRouteActive = isNavigationTargetActive(item.href, currentPath, searchParams, currentHash, item.matchDescendants);
+                    return (
+                      <li key={itemIdx}>
+                        <button
+                          onClick={() => {
+                            onClose();
+                            navigate(item.href);
+                          }}
+                          aria-current={isRouteActive ? 'page' : undefined}
+                          className={`group flex items-baseline gap-1 border-l-2 pl-2 text-left text-sm transition-colors ${
+                            isRouteActive
+                              ? 'border-[#DFB257] text-[#DFB257]'
+                              : 'border-transparent text-neutral-300 hover:border-white/30 hover:text-white'
+                          }`}
+                        >
+                          <span className={`inline-block transition-transform ${
+                            isRouteActive ? '' : 'group-hover:translate-x-1'
+                          }`}>
+                            {item.label}
+                          </span>
+                        </button>
+                        {item.description && (
+                          <p className={`mt-0.5 line-clamp-1 text-xs ${
+                            isRouteActive ? 'text-neutral-300' : 'text-neutral-500'
+                          }`}>
+                            {item.description}
+                          </p>
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             ))}
@@ -103,7 +115,12 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({ category, isOpen, onClose })
                 onClose();
                 navigate(category.featured.href);
               }}
-              className="inline-flex items-center gap-2 text-xs font-semibold text-[#D97706] hover:text-amber-400 transition-colors uppercase tracking-wider"
+              aria-current={isNavigationTargetActive(category.featured.href, currentPath, searchParams, currentHash) ? 'page' : undefined}
+              className={`inline-flex items-center gap-2 text-xs font-semibold transition-colors uppercase tracking-wider ${
+                isNavigationTargetActive(category.featured.href, currentPath, searchParams, currentHash)
+                  ? 'text-[#DFB257]'
+                  : 'text-[#D97706] hover:text-amber-400'
+              }`}
             >
               <span>Explore Story</span>
               <ArrowRight className="w-3.5 h-3.5" />

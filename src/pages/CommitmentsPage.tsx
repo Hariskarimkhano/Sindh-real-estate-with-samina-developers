@@ -87,7 +87,7 @@ export const CommitmentsPage: React.FC<CommitmentsPageProps> = ({ initialTab }) 
                   key={tab.id}
                   onClick={() => {
                     setActiveTabSlug(tab.slug);
-                    window.history.pushState({}, '', `/commitments/${tab.slug}`);
+                    navigate(`/commitments/${tab.slug}`, { scroll: false });
                   }}
                   className={`p-4 text-left border transition-all flex flex-col justify-between ${
                     isActive

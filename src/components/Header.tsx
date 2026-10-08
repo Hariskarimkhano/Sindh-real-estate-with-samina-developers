@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigation } from '../context/NavigationContext';
+import { isNavigationTargetActive, isPathActive, useNavigation } from '../context/NavigationContext';
 import { Search, Menu, ChevronDown, ArrowRight } from 'lucide-react';
 import { MegaMenu, MegaMenuCategory } from './MegaMenu';
 import { MobileMenu } from './MobileMenu';
@@ -8,7 +8,7 @@ import { Button } from './ui/Button';
 import { ASSETS } from '../data/assets';
 
 export const Header: React.FC = () => {
-  const { currentPath, navigate, openSearch, openProjectInquiry } = useNavigation();
+  const { currentPath, currentHash, searchParams, navigate, openSearch, openProjectInquiry } = useNavigation();
   const [activeMenuId, setActiveMenuId] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -97,6 +97,7 @@ export const Header: React.FC = () => {
             { label: 'Data Centers & Mission Critical', href: '/projects?market=Data%20Centers', description: 'Hyperscale AI infrastructure & substations' },
             { label: 'Aviation & Transportation', href: '/projects?market=Aviation', description: 'Terminal modernizations & transit hubs' },
             { label: 'Green Building', href: '/projects?market=Green%20Building', description: 'LEED Platinum & mass-timber structures' },
+            { label: 'Markets & Sectors', href: '/markets', description: 'Explore our market sectors', matchDescendants: true },
             { label: 'All Projects Portfolio', href: '/projects', description: 'Filter complete searchable project archive' }
           ]
         }
@@ -233,7 +234,15 @@ export const Header: React.FC = () => {
     }
   ];
 
+  const routeActiveCategory = categories.find(category =>
+    isPathActive(currentPath, new URL(category.href, window.location.origin).pathname)
+  ) ?? categories.find(category =>
+    category.columns.some(column => column.items.some(item =>
+      isNavigationTargetActive(item.href, currentPath, searchParams, currentHash, item.matchDescendants)
+    )) || isNavigationTargetActive(category.featured.href, currentPath, searchParams, currentHash)
+  );
   const activeCategory = categories.find(c => c.id === activeMenuId);
+  const isHomeActive = currentPath === '/' && !currentHash;
 
   return (
     <header className="sticky top-0 z-40 bg-[#0D1013]/90 backdrop-blur-md text-white border-b border-white/[0.08] shadow-lg shadow-black/20 select-none transition-colors">
@@ -249,8 +258,10 @@ export const Header: React.FC = () => {
             }}
             className="group flex flex-col items-center justify-center transition-opacity hover:opacity-90 py-1"
             aria-label="Sindhi Real Estate with Samina Developer Homepage"
+            aria-current={isHomeActive ? 'page' : undefined}
           >
             <SindhRealEstateLogo variant="stacked" height={44} />
+            {isHomeActive && <span className="mt-1 h-0.5 w-8 bg-[#DFB257]" />}
           </a>
         </div>
 
@@ -261,7 +272,7 @@ export const Header: React.FC = () => {
         >
           {categories.map((cat) => {
             const isActive = activeMenuId === cat.id;
-            const isRouteActive = currentPath.startsWith(cat.href);
+            const isRouteActive = routeActiveCategory?.id === cat.id;
             return (
               <div
                 key={cat.id}
@@ -279,6 +290,7 @@ export const Header: React.FC = () => {
                       : 'hover:text-white'
                   }`}
                   aria-expanded={isActive}
+                  aria-current={isRouteActive ? 'page' : undefined}
                 >
                   <span>{cat.label}</span>
                   <ChevronDown
