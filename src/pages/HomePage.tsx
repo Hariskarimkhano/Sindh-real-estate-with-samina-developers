@@ -48,7 +48,7 @@ export const HomePage: React.FC = () => {
       {/* 11. Careers Callout */}
       <CareersSection />
 
-      {/* 12. Contact Conversation */}
+      {/* 12. Office Locations */}
       <ContactSection />
     </div>
   );

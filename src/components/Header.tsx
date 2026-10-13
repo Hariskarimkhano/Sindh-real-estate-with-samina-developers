@@ -33,14 +33,14 @@ export const Header: React.FC = () => {
           items: [
             { label: 'Our Network', href: '/our-network', description: 'Integrated planning, engineering & procurement' },
             { label: 'Global Reach', href: '/international', description: 'Our international operations worldwide' },
-            { label: 'Local Expertise', href: '/locations', description: 'Find regional offices across North America' }
+            { label: 'Local Expertise', href: '/locations', description: 'Find our UK, Canada, and UAE offices' }
           ]
         }
       ],
       featured: {
         title: 'Building What Matters Since 1902',
         tag: 'Heritage & Vision',
-        description: 'Founded on integrity and engineering excellence, Sindhi Real Estate with Samina Developer delivers complex projects with local passion and global perspective.',
+        description: 'Sindhi Real Estate — Samina Developer delivers property development with local knowledge and a global perspective.',
         href: '/who-we-are',
         image: ASSETS.heroConstruction
       }
@@ -180,7 +180,7 @@ export const Header: React.FC = () => {
         {
           title: 'Opportunities',
           items: [
-            { label: 'Explore All Openings', href: '/careers', description: 'Search positions across 50+ offices' },
+            { label: 'Explore All Openings', href: '/careers', description: 'Explore opportunities with our global team' },
             { label: 'Students & Internships', href: '/careers#students', description: 'Co-ops, field internships & rotators' },
             { label: 'Experienced Professionals', href: '/careers#experienced', description: 'Project executives, VDC leads & superintendents' },
             { label: 'Trade & Craft Careers', href: '/careers#craft', description: 'Union & craft apprenticeships with full benefits' }
@@ -197,7 +197,7 @@ export const Header: React.FC = () => {
       ],
       featured: {
         title: 'Ambitious People. Impactful Work.',
-        tag: 'Careers at Sindhi Real Estate with Samina Developer',
+        tag: 'Careers at Sindhi Real Estate — Samina Developer',
         description: 'Solve challenging engineering problems alongside colleagues who share your passion for building what matters.',
         href: '/careers',
         image: ASSETS.heroConstruction
@@ -257,7 +257,7 @@ export const Header: React.FC = () => {
               navigate('/');
             }}
             className="group flex flex-col items-center justify-center transition-opacity hover:opacity-90 py-1"
-            aria-label="Sindhi Real Estate with Samina Developer Homepage"
+            aria-label="Sindhi Real Estate — Samina Developer Homepage"
             aria-current={isHomeActive ? 'page' : undefined}
           >
             <SindhRealEstateLogo variant="stacked" height={44} />

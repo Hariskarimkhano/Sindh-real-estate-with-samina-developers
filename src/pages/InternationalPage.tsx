@@ -72,7 +72,7 @@ export const InternationalPage: React.FC = () => {
               SHAPING THE WORLD&rsquo;S MOST MONUMENTAL HORIZONS
             </h2>
             <p className="text-neutral-700 text-sm sm:text-base leading-relaxed font-light">
-              Sindhi Real Estate with Samina Developer brings international construction and project management expertise to sovereign funds, global developers, and multinational corporations.
+              Sindhi Real Estate — Samina Developer brings international construction and project management expertise to sovereign funds, global developers, and multinational corporations.
             </p>
             <p className="text-neutral-700 text-sm sm:text-base leading-relaxed font-light">
               We specialize in tall building engineering, high-wind and seismic aerodynamics, complex curtain-wall procurement, and mission-critical logistical planning across challenging climates.

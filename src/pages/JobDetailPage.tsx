@@ -236,7 +236,7 @@ export const JobDetailPage: React.FC<JobDetailPageProps> = ({ jobId }) => {
                     <input
                       required
                       type="email"
-                      placeholder="jane@email.com"
+                      placeholder="Enter your email address"
                       value={applicant.email}
                       onChange={e => setApplicant({ ...applicant, email: e.target.value })}
                       className="w-full px-3 py-2 bg-neutral-900 border border-white/15 focus:border-[#D97706] text-sm text-white focus:outline-none"
@@ -249,7 +249,7 @@ export const JobDetailPage: React.FC<JobDetailPageProps> = ({ jobId }) => {
                     <input
                       required
                       type="tel"
-                      placeholder="+1 (555) 000-0000"
+                      placeholder="Enter your phone number"
                       value={applicant.phone}
                       onChange={e => setApplicant({ ...applicant, phone: e.target.value })}
                       className="w-full px-3 py-2 bg-neutral-900 border border-white/15 focus:border-[#D97706] text-sm text-white focus:outline-none"

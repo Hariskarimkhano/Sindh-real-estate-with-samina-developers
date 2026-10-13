@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useNavigation } from '../context/NavigationContext';
 import { PROJECTS_DATA } from '../data/projects';
+import { CANADIAN_PROJECT_GALLERIES } from '../data/canadianProjectImages';
 import { Project } from '../types';
 import { Search, Filter, MapPin, ArrowRight, ArrowUpRight, X } from 'lucide-react';
 
@@ -39,7 +40,10 @@ export const ProjectsPage: React.FC = () => {
     'Chicago',
     'Kuala Lumpur',
     'Dubai',
-    'Taipei'
+    'Taipei',
+    'Ottawa',
+    'Montreal',
+    'Calgary'
   ];
 
   const statuses = ['All', 'Completed', 'Under Construction', 'Preconstruction'];
@@ -82,6 +86,48 @@ export const ProjectsPage: React.FC = () => {
       return true;
     });
   }, [searchQuery, selectedMarket, selectedLocation, selectedStatus, selectedYear]);
+
+  const filteredCanadianGalleries = CANADIAN_PROJECT_GALLERIES.filter(({ city }) => {
+    const query = searchQuery.trim().toLowerCase();
+    const matchesSearch =
+      !query ||
+      city.toLowerCase().includes(query) ||
+      `${city} city`.toLowerCase().includes(query) ||
+      query === 'canada' ||
+      query === 'canadian';
+    const matchesLocation = selectedLocation === 'All' || city === selectedLocation;
+    const matchesOtherFilters =
+      selectedMarket === 'All' &&
+      selectedStatus === 'All' &&
+      selectedYear === 'All';
+
+    return matchesSearch && matchesLocation && matchesOtherFilters;
+  });
+
+  const filteredCanadianProjects = CANADIAN_PROJECT_GALLERIES
+    .map(gallery => ({
+      ...gallery,
+      name: gallery.city === 'Montreal'
+        ? 'Montreal City, Canada'
+        : `${gallery.city}, Canada`,
+      image: gallery.images[0]
+    }))
+    .filter(project => {
+      const query = searchQuery.trim().toLowerCase();
+      const matchesSearch =
+        !query ||
+        project.city.toLowerCase().includes(query) ||
+        project.name.toLowerCase().includes(query) ||
+        query === 'canada' ||
+        query === 'canadian';
+      const matchesLocation = selectedLocation === 'All' || project.city === selectedLocation;
+      const matchesOtherFilters =
+        selectedMarket === 'All' &&
+        selectedStatus === 'All' &&
+        selectedYear === 'All';
+
+      return Boolean(project.image) && matchesSearch && matchesLocation && matchesOtherFilters;
+    });
 
   const resetFilters = () => {
     setSearchQuery('');
@@ -226,7 +272,7 @@ export const ProjectsPage: React.FC = () => {
       {/* Projects Grid */}
       <section className="py-16 sm:py-24 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6">
-          {filteredProjects.length === 0 ? (
+          {filteredProjects.length === 0 && filteredCanadianProjects.length === 0 ? (
             <div className="py-24 text-center space-y-4 bg-white border border-neutral-200 p-8">
               <h3 className="font-display text-xl font-bold uppercase text-[#12161A]">
                 No Projects Match Your Search Criteria
@@ -301,7 +347,111 @@ export const ProjectsPage: React.FC = () => {
                   </div>
                 </div>
               ))}
+              {filteredCanadianProjects.map(project => (
+                <div
+                  key={`canada-${project.city}`}
+                  className="group bg-white border border-neutral-200 hover:border-neutral-400 flex flex-col justify-between overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                >
+                  <div className="relative aspect-16/10 overflow-hidden bg-neutral-100">
+                    <img
+                      src={project.image.src}
+                      alt={`${project.name} project`}
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-black/70 backdrop-blur-xs text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1">
+                        Canada
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2 text-xs text-neutral-500">
+                        <span className="text-[#D97706] font-bold">Canadian Project</span>
+                        <span aria-hidden="true">·</span>
+                        <span className="flex items-center gap-1">
+                          <MapPin className="w-3 h-3 text-neutral-400" />
+                          {project.city}, Canada
+                        </span>
+                      </div>
+
+                      <h3 className="font-display text-lg font-bold uppercase tracking-tight text-[#12161A] leading-snug">
+                        {project.name}
+                      </h3>
+
+                      <p className="text-xs text-neutral-600 line-clamp-2 leading-relaxed">
+                        Supplied project imagery from {project.city}, Canada.
+                      </p>
+                    </div>
+
+                    <div className="pt-4 border-t border-neutral-100 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-neutral-900">
+                      <button
+                        type="button"
+                        onClick={() => document.getElementById(`canadian-projects-${project.city.toLowerCase()}`)?.scrollIntoView({ behavior: 'smooth' })}
+                        className="text-left hover:text-[#D97706] transition-colors"
+                      >
+                        VIEW PROJECT IMAGES
+                      </button>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
+          )}
+
+          {filteredCanadianGalleries.length > 0 && (
+            <section className="mt-16 space-y-10" aria-labelledby="canadian-project-galleries">
+              <div className="max-w-3xl space-y-3">
+                <div className="text-xs font-bold uppercase tracking-widest text-[#D97706]">
+                  Canada
+                </div>
+                <h2
+                  id="canadian-project-galleries"
+                  className="font-display text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-[#12161A]"
+                >
+                  Canadian Project Galleries
+                </h2>
+                <p className="text-sm text-neutral-600 leading-relaxed">
+                  Supplied project imagery from Ottawa, Montreal, and Calgary. Project names and specifications were not included with these images.
+                </p>
+              </div>
+
+              {filteredCanadianGalleries.map(({ city, images }) => (
+                <section key={city} aria-labelledby={`canadian-projects-${city.toLowerCase()}`} className="space-y-5">
+                  <div className="flex items-baseline justify-between gap-4 border-b border-neutral-200 pb-3">
+                    <h3
+                      id={`canadian-projects-${city.toLowerCase()}`}
+                      className="font-display text-xl font-bold uppercase tracking-tight text-[#12161A]"
+                    >
+                      {city}, Canada
+                    </h3>
+                    <span className="text-xs text-neutral-500">
+                      {images.length} {images.length === 1 ? 'image' : 'images'}
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {images.map(image => (
+                      <figure key={image.src} className="bg-white border border-neutral-200 overflow-hidden">
+                        <div className="bg-neutral-100">
+                          <img
+                            src={image.src}
+                            alt={image.alt}
+                            loading="lazy"
+                            className="block w-full h-auto object-contain"
+                          />
+                        </div>
+                        <figcaption className="px-4 py-3 text-xs font-semibold text-neutral-600">
+                          {image.caption}
+                        </figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </section>
           )}
         </div>
       </section>

@@ -85,7 +85,7 @@ export const CareersPage: React.FC = () => {
               <div className="relative aspect-4/3 overflow-hidden bg-neutral-900 border border-neutral-200 shadow-xl">
                 <img
                   src={ASSETS.heroEngineeringVdc}
-                  alt="Sindhi Real Estate with Samina Developer builders reviewing digital blueprints"
+                  alt="Sindhi Real Estate — Samina Developer builders reviewing digital blueprints"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />

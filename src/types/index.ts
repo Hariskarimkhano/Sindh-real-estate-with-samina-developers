@@ -94,11 +94,11 @@ export interface OfficeLocation {
   address: string;
   phone: string;
   email: string;
-  leadership: { name: string; title: string }[];
-  coordinates: { lat: number; lng: number };
-  activeProjectsCount: number;
-  localProjectsSlugs: string[];
-  localHighlights: string[];
+  leadership?: { name: string; title: string }[];
+  coordinates?: { lat: number; lng: number };
+  activeProjectsCount?: number;
+  localProjectsSlugs?: string[];
+  localHighlights?: string[];
 }
 
 export interface CommitmentTab {

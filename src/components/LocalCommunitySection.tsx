@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigation } from '../context/NavigationContext';
-import { LOCATIONS_DATA } from '../data/locations';
+import { LOCATIONS_DATA, OFFICIAL_EMAIL_PENDING, toTelephoneUri } from '../data/locations';
 import { PROJECTS_DATA } from '../data/projects';
 import { Button } from './ui/Button';
 import { ScrollReveal, ParallaxImage } from './ui/ScrollReveal';
@@ -9,20 +9,18 @@ import { MapPin, Phone, Mail, Building, ArrowRight, Users, CheckCircle2 } from '
 
 export const LocalCommunitySection: React.FC = () => {
   const { navigate } = useNavigation();
-  const [selectedLocationId, setSelectedLocationId] = useState<string>('san-francisco');
+  const [selectedLocationId, setSelectedLocationId] = useState<string>('uk');
 
   const currentLocation = LOCATIONS_DATA.find(l => l.id === selectedLocationId) || LOCATIONS_DATA[0];
 
-  // Local projects associated with this office location
   const localProjects = PROJECTS_DATA.filter(p =>
-    currentLocation.localProjectsSlugs.includes(p.slug) ||
+    currentLocation.localProjectsSlugs?.includes(p.slug) ||
     p.city.toLowerCase() === currentLocation.city.toLowerCase()
   );
 
   return (
     <section className="py-24 sm:py-36 bg-[#0D1013] text-white border-b border-white/10 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Section Header */}
         <div className="max-w-3xl space-y-4 mb-12">
           <ScrollReveal animation="fade-up">
             <div className="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-widest text-[#DFB257]">
@@ -44,14 +42,13 @@ export const LocalCommunitySection: React.FC = () => {
           </ScrollReveal>
         </div>
 
-        {/* Location Selector Tabs */}
         <ScrollReveal animation="fade-up" delay={0.25}>
           <div className="mb-12">
             <div className="text-xs uppercase tracking-wider text-neutral-400 font-semibold mb-3">
               Select Your Regional Market:
             </div>
             <div className="flex flex-wrap gap-2">
-              {LOCATIONS_DATA.map((loc) => {
+              {LOCATIONS_DATA.map(loc => {
                 const isSelected = loc.id === selectedLocationId;
                 return (
                   <button
@@ -71,7 +68,6 @@ export const LocalCommunitySection: React.FC = () => {
           </div>
         </ScrollReveal>
 
-        {/* Dynamic Local Community Content Grid */}
         <AnimatePresence mode="wait">
           <motion.div
             key={currentLocation.id}
@@ -81,7 +77,6 @@ export const LocalCommunitySection: React.FC = () => {
             transition={{ duration: 0.45, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
           >
-            {/* Left Column: Local Office & Leadership Card */}
             <div className="lg:col-span-4 bg-[#12161A] border border-white/10 p-6 sm:p-8 space-y-6 rounded-xs shadow-xl">
               <div>
                 <span className="text-[11px] font-mono-numbers text-[#DFB257] uppercase tracking-wider font-semibold block mb-1">
@@ -90,12 +85,13 @@ export const LocalCommunitySection: React.FC = () => {
                 <h3 className="font-display text-2xl font-bold uppercase text-white">
                   {currentLocation.name}
                 </h3>
-                <p className="text-xs text-neutral-400 mt-1">
-                  Active Projects in Region: <span className="text-white font-mono-numbers font-bold">{currentLocation.activeProjectsCount}</span>
-                </p>
+                {currentLocation.activeProjectsCount !== undefined && (
+                  <p className="text-xs text-neutral-400 mt-1">
+                    Active Projects in Region: <span className="text-white font-mono-numbers font-bold">{currentLocation.activeProjectsCount}</span>
+                  </p>
+                )}
               </div>
 
-              {/* Office Details */}
               <div className="space-y-3 pt-4 border-t border-white/10 text-xs text-neutral-300">
                 <div className="flex items-start gap-2.5">
                   <MapPin className="w-4 h-4 text-[#DFB257] shrink-0 mt-0.5" />
@@ -103,33 +99,36 @@ export const LocalCommunitySection: React.FC = () => {
                 </div>
                 <div className="flex items-center gap-2.5">
                   <Phone className="w-4 h-4 text-[#DFB257] shrink-0" />
-                  <a href={`tel:${currentLocation.phone}`} className="hover:text-white transition-colors">
+                  <a href={toTelephoneUri(currentLocation.phone)} className="hover:text-white transition-colors">
                     {currentLocation.phone}
                   </a>
                 </div>
-                <div className="flex items-center gap-2.5">
-                  <Mail className="w-4 h-4 text-[#DFB257] shrink-0" />
-                  <a href={`mailto:${currentLocation.email}`} className="hover:text-white transition-colors">
-                    {currentLocation.email}
-                  </a>
-                </div>
+                {currentLocation.email !== OFFICIAL_EMAIL_PENDING && (
+                  <div className="flex items-center gap-2.5">
+                    <Mail className="w-4 h-4 text-[#DFB257] shrink-0" />
+                    <a href={`mailto:${currentLocation.email}`} className="hover:text-white transition-colors">
+                      {currentLocation.email}
+                    </a>
+                  </div>
+                )}
               </div>
 
-              {/* Leadership */}
-              <div className="pt-4 border-t border-white/10 space-y-3">
-                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-400">
-                  <Users className="w-3.5 h-3.5 text-[#DFB257]" />
-                  <span>Local Office Leadership</span>
+              {currentLocation.leadership && currentLocation.leadership.length > 0 && (
+                <div className="pt-4 border-t border-white/10 space-y-3">
+                  <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-400">
+                    <Users className="w-3.5 h-3.5 text-[#DFB257]" />
+                    <span>Local Office Leadership</span>
+                  </div>
+                  <div className="space-y-2">
+                    {currentLocation.leadership.map((leader, idx) => (
+                      <div key={idx} className="text-xs">
+                        <div className="font-bold text-white">{leader.name}</div>
+                        <div className="text-neutral-400">{leader.title}</div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  {currentLocation.leadership.map((leader, idx) => (
-                    <div key={idx} className="text-xs">
-                      <div className="font-bold text-white">{leader.name}</div>
-                      <div className="text-neutral-400">{leader.title}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              )}
 
               <div className="pt-2">
                 <Button
@@ -143,24 +142,23 @@ export const LocalCommunitySection: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Column: Local Community Work & Projects */}
             <div className="lg:col-span-8 space-y-6">
-              {/* Impact Highlights */}
-              <div className="bg-[#12161A]/60 border border-white/10 p-6 sm:p-8 space-y-4 rounded-xs">
-                <h4 className="font-display text-lg font-bold uppercase tracking-tight text-white">
-                  Local Economic &amp; Civic Investment
-                </h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {currentLocation.localHighlights.map((hl, idx) => (
-                    <div key={idx} className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-[#DFB257] shrink-0 mt-0.5" />
-                      <span className="text-xs text-neutral-300 leading-relaxed">{hl}</span>
-                    </div>
-                  ))}
+              {currentLocation.localHighlights && currentLocation.localHighlights.length > 0 && (
+                <div className="bg-[#12161A]/60 border border-white/10 p-6 sm:p-8 space-y-4 rounded-xs">
+                  <h4 className="font-display text-lg font-bold uppercase tracking-tight text-white">
+                    Local Economic &amp; Civic Investment
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {currentLocation.localHighlights.map((highlight, idx) => (
+                      <div key={idx} className="flex items-start gap-2.5">
+                        <CheckCircle2 className="w-4 h-4 text-[#DFB257] shrink-0 mt-0.5" />
+                        <span className="text-xs text-neutral-300 leading-relaxed">{highlight}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
-              {/* Local Projects Showcase */}
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <h4 className="font-display text-lg font-bold uppercase tracking-tight text-white flex items-center gap-2">
@@ -178,7 +176,7 @@ export const LocalCommunitySection: React.FC = () => {
 
                 {localProjects.length > 0 ? (
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {localProjects.slice(0, 2).map((project) => (
+                    {localProjects.slice(0, 2).map(project => (
                       <div
                         key={project.id}
                         onClick={() => navigate(`/projects/${project.slug}`)}
@@ -210,7 +208,7 @@ export const LocalCommunitySection: React.FC = () => {
                   </div>
                 ) : (
                   <div className="p-6 bg-[#12161A] border border-white/10 text-xs text-neutral-400 rounded-xs">
-                    Multiple active capital programs currently under non-disclosure in this regional jurisdiction. Contact local office for detailed qualifications.
+                    Project information for this office is being updated.
                   </div>
                 )}
               </div>

@@ -79,7 +79,7 @@ export const NEWS_DATA: NewsArticle[] = [
       title: 'Senior Vice President of Environmental Health & Safety'
     },
     heroImage: ASSETS.heroConstruction,
-    excerpt: 'Why Sindhi Real Estate with Samina Developer’s Living Injury-Free Everyday (LIFE) program treats mental health, total worker wellness, and stop-work empowerment as the true foundation of zero-incident jobsites.',
+    excerpt: 'Why Sindhi Real Estate — Samina Developer’s Living Injury-Free Everyday (LIFE) program treats mental health, total worker wellness, and stop-work empowerment as the true foundation of zero-incident jobsites.',
     readTime: '4 min read',
     content: [
       'For decades, construction safety was measured purely through retrospective lag metrics: OSHA recordable incident rates, lost-time days, and workers’ compensation claims. With an EMR of 0.45, we recognize that true safety requires leading indicators and genuine cultural transformation.',

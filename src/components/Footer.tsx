@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigation } from '../context/NavigationContext';
+import { LOCATIONS_DATA, OFFICIAL_EMAIL_PENDING, toTelephoneUri } from '../data/locations';
 import { ArrowUp } from 'lucide-react';
 import { SindhRealEstateLogo } from './SindhRealEstateLogo';
 
@@ -32,8 +33,8 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* 5 Enterprise Columns */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 py-12 border-b border-white/10">
+        {/* Site navigation and office contact details */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 py-12 border-b border-white/10">
           {/* Col 1: Who We Are */}
           <div className="space-y-4">
             <h4 className="text-xs font-bold uppercase tracking-wider text-[#DFB257]">
@@ -238,12 +239,42 @@ export const Footer: React.FC = () => {
               </li>
             </ul>
           </div>
+
+          {/* Office Contact Details */}
+          <div className="space-y-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#DFB257]">
+              OUR OFFICES
+            </h4>
+            <ul className="space-y-4 text-xs text-neutral-400">
+              {LOCATIONS_DATA.map(office => (
+                <li key={office.id} className="space-y-1.5">
+                  <button
+                    onClick={() => navigate(`/locations?office=${office.id}`)}
+                    className="font-semibold text-neutral-300 hover:text-white text-left"
+                  >
+                    {office.name}
+                  </button>
+                  <div className="text-neutral-500">
+                    {office.city}, {office.country}
+                  </div>
+                  <a href={toTelephoneUri(office.phone)} className="inline-block hover:text-white">
+                    {office.phone}
+                  </a>
+                  {office.email !== OFFICIAL_EMAIL_PENDING && (
+                    <a href={`mailto:${office.email}`} className="block hover:text-white">
+                      {office.email}
+                    </a>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         {/* Bottom Bar: Legal & Compliance */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-[11px] text-neutral-400 gap-4">
           <div className="flex flex-wrap items-center gap-6">
-            <span>&copy; {new Date().getFullYear()} Sindhi Real Estate with Samina Developer. All rights reserved.</span>
+            <span>&copy; {new Date().getFullYear()} Sindhi Real Estate — Samina Developer. All rights reserved.</span>
             <span className="hover:text-neutral-300 cursor-pointer">Privacy Policy</span>
             <span className="hover:text-neutral-300 cursor-pointer">Terms of Use</span>
             <span className="hover:text-neutral-300 cursor-pointer">Accessibility</span>

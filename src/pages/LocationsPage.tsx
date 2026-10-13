@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useNavigation } from '../context/NavigationContext';
-import { LOCATIONS_DATA } from '../data/locations';
+import { LOCATIONS_DATA, OFFICIAL_EMAIL_PENDING, toTelephoneUri } from '../data/locations';
 import { OfficeLocation } from '../types';
 import { Search, MapPin, Phone, Mail, Users, Building, ArrowRight, X } from 'lucide-react';
 
@@ -11,7 +11,7 @@ export const LocationsPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('All');
 
-  const regions = ['All', 'Northeast', 'Northern California', 'Southwest', 'Midwest', 'South', 'Northwest', 'International'];
+  const regions = ['All', ...new Set(LOCATIONS_DATA.map(loc => loc.region))];
 
   const filteredOffices = useMemo(() => {
     return LOCATIONS_DATA.filter((loc: OfficeLocation) => {
@@ -45,7 +45,7 @@ export const LocationsPage: React.FC = () => {
               FIND A SINDHI REAL ESTATE OFFICE
             </h1>
             <p className="text-lg sm:text-xl font-light text-neutral-300 leading-relaxed">
-              With regional offices across North America and key global hubs worldwide, Sindhi Real Estate with Samina Developer pairs global capacity with direct local accessibility.
+              Find our official offices in the United Kingdom, Canada, and Dubai.
             </p>
           </div>
         </div>
@@ -119,33 +119,37 @@ export const LocationsPage: React.FC = () => {
                     </div>
                     <div className="flex items-center gap-2.5">
                       <Phone className="w-4 h-4 text-[#D97706] shrink-0" />
-                      <a href={`tel:${office.phone}`} className="hover:text-black">
+                      <a href={toTelephoneUri(office.phone)} className="hover:text-black">
                         {office.phone}
                       </a>
                     </div>
-                    <div className="flex items-center gap-2.5">
-                      <Mail className="w-4 h-4 text-[#D97706] shrink-0" />
-                      <a href={`mailto:${office.email}`} className="hover:text-black">
-                        {office.email}
-                      </a>
-                    </div>
+                    {office.email !== OFFICIAL_EMAIL_PENDING && (
+                      <div className="flex items-center gap-2.5">
+                        <Mail className="w-4 h-4 text-[#D97706] shrink-0" />
+                        <a href={`mailto:${office.email}`} className="hover:text-black">
+                          {office.email}
+                        </a>
+                      </div>
+                    )}
                   </div>
 
                   {/* Leadership */}
-                  <div className="pt-2 border-t border-neutral-100 space-y-2">
-                    <div className="text-[11px] font-bold uppercase tracking-wider text-neutral-900 flex items-center gap-1.5">
-                      <Users className="w-3.5 h-3.5 text-[#D97706]" />
-                      <span>Leadership</span>
+                  {office.leadership && office.leadership.length > 0 && (
+                    <div className="pt-2 border-t border-neutral-100 space-y-2">
+                      <div className="text-[11px] font-bold uppercase tracking-wider text-neutral-900 flex items-center gap-1.5">
+                        <Users className="w-3.5 h-3.5 text-[#D97706]" />
+                        <span>Leadership</span>
+                      </div>
+                      <div className="space-y-1.5">
+                        {office.leadership.map((leader, lIdx) => (
+                          <div key={lIdx} className="text-xs">
+                            <span className="font-bold text-[#12161A]">{leader.name}</span>
+                            <span className="text-neutral-500 block text-[11px]">{leader.title}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                    <div className="space-y-1.5">
-                      {office.leadership.map((leader, lIdx) => (
-                        <div key={lIdx} className="text-xs">
-                          <span className="font-bold text-[#12161A]">{leader.name}</span>
-                          <span className="text-neutral-500 block text-[11px]">{leader.title}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  )}
                 </div>
 
                 {/* Card Actions */}

@@ -19,7 +19,7 @@ export const SindhRealEstateLogo: React.FC<SindhRealEstateLogoProps> = ({
       <div className={`inline-flex flex-col items-center justify-center select-none ${className}`}>
         <img
           src={logoAsset}
-          alt="Sindhi Real Estate with Samina Developer"
+          alt="Sindhi Real Estate — Samina Developer"
           style={{ height: height, width: 'auto' }}
           className="block shrink-0 object-contain"
         />

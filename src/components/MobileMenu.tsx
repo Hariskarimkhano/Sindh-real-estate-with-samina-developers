@@ -87,7 +87,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, categor
               onClose();
               navigate('/');
             }}
-            aria-label="Sindhi Real Estate with Samina Developer Homepage"
+            aria-label="Sindhi Real Estate — Samina Developer Homepage"
             aria-current={isHomeActive ? 'page' : undefined}
             className="flex flex-col items-center rounded-xs focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#D97706]"
           >
@@ -268,7 +268,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, categor
                 : ''
             }`}
           >
-            CONTACT HEADQUARTERS
+            CONTACT OUR OFFICES
           </Button>
         </div>
       </div>

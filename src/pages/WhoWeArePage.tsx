@@ -47,7 +47,7 @@ export const WhoWeArePage: React.FC = () => {
               A LEGACY OF BUILDING WHAT MATTERS
             </h1>
             <p className="text-lg sm:text-xl font-light text-neutral-300 leading-relaxed">
-              Sindhi Real Estate with Samina Developer is an international construction services company dedicated to transforming ideas into physical landmarks that elevate societies.
+              Sindhi Real Estate — Samina Developer is an international construction services company dedicated to transforming ideas into physical landmarks that elevate societies.
             </p>
           </div>
         </div>
@@ -66,7 +66,7 @@ export const WhoWeArePage: React.FC = () => {
                 INTEGRITY, TECHNICAL MASTERY &amp; LOCAL DEVOTION
               </h2>
               <p className="text-neutral-700 leading-relaxed text-sm sm:text-base">
-                Sindhi Real Estate with Samina Developer takes on complex building programs and earns trust every day through radical honesty, financial discipline, and technical craft.
+                Sindhi Real Estate — Samina Developer takes on complex building programs and earns trust every day through radical honesty, financial discipline, and technical craft.
               </p>
               <p className="text-neutral-700 leading-relaxed text-sm sm:text-base">
                 As a member of HOCHTIEF and ACS Group, we combine the financial strength and worldwide purchasing power of one of the planet&rsquo;s largest engineering networks with the agility, responsiveness, and civic devotion of over 50 regional offices.
@@ -118,7 +118,7 @@ export const WhoWeArePage: React.FC = () => {
                 Our Leadership
               </h2>
               <p className="max-w-2xl text-sm leading-relaxed text-neutral-300 sm:text-base">
-                Meet the leadership team guiding Sindhi Real Estate with Samina Developer.
+                Meet the leadership team guiding Sindhi Real Estate — Samina Developer.
               </p>
             </div>
 
@@ -214,7 +214,7 @@ export const WhoWeArePage: React.FC = () => {
                 Uncompromising Safety
               </h3>
               <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed">
-                Living Injury-Free Everyday (LIFE) is our universal pact. Every person on a Sindhi Real Estate with Samina Developer jobsite holds unconditional authority to stop work whenever an unsafe condition exists.
+                Living Injury-Free Everyday (LIFE) is our universal pact. Every person on a Sindhi Real Estate — Samina Developer jobsite holds unconditional authority to stop work whenever an unsafe condition exists.
               </p>
             </div>
 
