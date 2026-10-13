@@ -5,6 +5,7 @@ import { Footer } from './components/Footer';
 import { SearchOverlay } from './components/SearchOverlay';
 import { ProjectInquiryWorkflow } from './components/ProjectInquiryWorkflow';
 import { ScrollProgress } from './components/ui/ScrollProgress';
+import { WhatsAppButton } from './components/WhatsAppButton';
 
 import { HomePage } from './pages/HomePage';
 import { WhoWeArePage } from './pages/WhoWeArePage';
@@ -144,6 +145,7 @@ const AppContent: React.FC = () => {
       {/* Global Interactive Overlays */}
       <SearchOverlay />
       <ProjectInquiryWorkflow />
+      <WhatsAppButton />
     </div>
   );
 };
